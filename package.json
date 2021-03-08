@@ -1,0 +1,24 @@
+{
+  "name": "Node-App",
+  "version": "1.0.0",
+  "description": "My node app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sapoKokas/Node-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sapoKokas/Node-App/issues"
+  },
+  "homepage": "https://github.com/sapoKokas/Node-App#readme",
+  "dependencies": {
+    "@hapi/joi": "^15.0.3",
+    "express": "^4.17.1"
+  }
+}
