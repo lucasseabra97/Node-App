@@ -20,6 +20,7 @@
   "homepage": "https://github.com/sapoKokas/Node-App#readme",
   "dependencies": {
     "@hapi/joi": "^15.0.3",
+    "cors": "^2.8.5",
     "express": "^4.17.1"
   }
 }
