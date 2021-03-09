@@ -1,7 +1,10 @@
 const express = require('express');
 const Joi = require('@hapi/joi');
 const app = express();
+const cors = require("cors");
 
+
+app.use(cors());
 app.use(express.json());
 
 const genres = [
