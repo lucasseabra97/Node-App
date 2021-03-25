@@ -1,5 +1,6 @@
 FROM node:14
 
+ENV NODE_ENV development
 # Create app directory
 WORKDIR /usr/src/app
 
@@ -15,5 +16,5 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-EXPOSE 8080
-CMD [ "node", "index.js" ]
+EXPOSE 3000
+CMD [ "npm", "start" ]

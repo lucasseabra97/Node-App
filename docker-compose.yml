@@ -1,0 +1,18 @@
+version: '3.4'
+services: 
+  nodejs:
+    image: nodejs
+    restart: always
+    build: .
+    environment: 
+      NODE_ENV: development
+    ports: 
+      - 3000:3000
+  mongo:
+    image: mongo:latest
+    volumes: 
+      - data:/data/db
+    ports: 
+      - 27017:27017
+volumes: 
+  data:
