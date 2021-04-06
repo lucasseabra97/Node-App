@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-appv2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs
+  template:
+    metadata:
+      labels:
+        app: nodejs
+    spec:
+      containers:
+      - name: nodejs
+        image: lucasseabra/nodejs-starter
+        ports:
+          - containerPort: 3000
+        env:
+          - name: MONGO_URL
+            value: mongodb://mongo:27017/vidly
+        imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodejs
+spec:
+  selector:
+    app: nodejs
+  ports:
+  - port: 3000
+    targetPort: 3000
+  type: LoadBalancer
+  

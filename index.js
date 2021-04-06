@@ -3,16 +3,22 @@ const genres = require('./routes/genres');
 const express = require('express');
 const app = express();
 
-mongoose.connect('mongodb://mongo:27017/vidly', {useNewUrlParser:true, useUnifiedTopology: true })
+
+const port = process.env.PORT || 3000;
+const mongoURL = process.env.MONGO_URL || 'mongodb://mongo:27017/vidly';
+
+mongoose.connect(mongoURL, {useNewUrlParser:true, useUnifiedTopology: true })
     .then(()=>console.log('Connected to MongoDB...'))
     .catch(err => console.error('Could not connect to mongoDB...'))
 
 app.use(express.json());
 app.use('/api/genres',genres);
 
+app.get('/',(req,res)=>{
+    res.send('Hello World')
+})
 
 
-const port = process.env.PORT || 3000;
 app.listen(port, "0.0.0.0",() => {
     console.log(`Listening on port ${port}...`)
 });
