@@ -1,11 +1,12 @@
 const mongoose  = require('mongoose')
 const genres = require('./routes/genres');
+const customers = require('./routes/customers');
 const express = require('express');
 const app = express();
 
 
 const port = process.env.PORT || 3000;
-const mongoURL = process.env.MONGO_URL || 'mongodb://mongo:27017/vidly';
+const mongoURL = process.env.MONGO_URL || 'mongodb://localhost:27017/vidly';
 
 mongoose.connect(mongoURL, {useNewUrlParser:true, useUnifiedTopology: true })
     .then(()=>console.log('Connected to MongoDB...'))
@@ -13,6 +14,7 @@ mongoose.connect(mongoURL, {useNewUrlParser:true, useUnifiedTopology: true })
 
 app.use(express.json());
 app.use('/api/genres',genres);
+app.use('/api/customers',customers);
 
 app.get('/',(req,res)=>{
     res.send('Hello World')
