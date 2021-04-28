@@ -19,9 +19,12 @@
   },
   "homepage": "https://github.com/sapoKokas/Node-App#readme",
   "dependencies": {
-    "@hapi/joi": "^15.0.3",
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.12.2"
+    "joi": "^17.4.0",
+    "joi-password-complexity": "^5.1.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.12.5"
   }
 }
