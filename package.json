@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/sapoKokas/Node-App#readme",
   "dependencies": {
-    "@hapi/joi": "^15.0.3",
+    "@hapi/joi": "^15.1.1",
     "express": "^4.17.1"
   }
 }
